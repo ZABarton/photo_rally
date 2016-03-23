@@ -1,0 +1,10 @@
+<h1>ARFticles under category: <%= @category.name %></h1>
+
+
+  <% @category.articles.each do |article| %>
+    <h2><a href="/categories/<%= @category.id %>/articles/<%= article.id %>"><%= article.name %></a></h2>
+    <p><em>$<%= article.price %> -- <%= article.description %></em></p>
+  <% end %>
+
+
+<a href="/categories/<%= @category.id %>/articles/new">Add an ARFticle to this category!</a>

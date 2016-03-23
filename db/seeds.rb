@@ -1,0 +1,13 @@
+orbs = Category.create!(name: "Orbs")
+boats = Category.create!(name: "Boats")
+seafood = Category.create!(name: "Seafood")
+
+Article.create!(name: "Beach Ball", description: "Bounce it on your nose!", price: 50, category: orbs)
+Article.create!(name: "Basketball", description: "Spin it on your nose!", price: 20, category: orbs)
+Article.create!(name: "Powerball", description: "You can't win if you don't play!", price: 5, category: orbs)
+Article.create!(name: "Speedboat", description: "Swim behind it and wake yourself up!", price: 50000, category: boats)
+Article.create!(name: "Combination canoe/ping-pong table", description: "Don't forget your paddles!", price: 600, category: boats)
+Article.create!(name: "Pirate Ship", description: "What does the pirate sea lion say? ARRRF ARRRF ARRRF ARRRF ARRRF ARRRF ARRRF ARRRF", price: 150000, category: boats)
+Article.create!(name: "Shrimp", description: "Great with cocktail sauce!", price: 10, category: seafood)
+Article.create!(name: "Anchovies", description: "Packed in tight!", price: 5, category: seafood)
+Article.create!(name: "The White Whale", description: "If you can find it and kill it, you can eat it ALL. For free!* (Might cost decades and ultimately your life)", price: 0, category: seafood)
