@@ -1,0 +1,15 @@
+<section id="profile">
+  <header>
+    <% if is_this_you?(@user) %>
+      <h1>Welcome back, <%= current_user.username %></h1>
+      <h3>Photo Rallies are here for you!</h3>
+    <% else %>
+      <h1>You are currently looking at <%= @user.username %>'s profile</h1>
+      <h3>How scandalous!</h3>
+    <% end %>
+  </header>
+  <section class="list">
+    <h2>Your Current Photo Rally Events</h2>
+    <%= erb :'users/_my_events' %>
+  </section>
+</section>

@@ -34,20 +34,25 @@ all_lists = List.all
 type = ["daily", "rally"]
 
 20.times do
-  Event.create(name: Faker::Commerce.department, event_type: type.sample, list_id: all_lists.sample.id)
+  Event.create(name: Faker::Commerce.department, event_type: type.sample, list_id: all_lists.sample.id, event_start: Date.today-rand(5), event_end: Date.today+rand(2))
 end
 
 all_lists.each do |list|
   10.times do
-    Objective.create(clue: Faker::Hacker.phrases, list_id: list.id)
+    Objective.create(clue: Faker::Hacker.say_something_smart, list_id: list.id)
   end
 end
 
 all_events = Event.all
 
 all_events.each do |event|
-  4.times do
-    Enrollment.create(team_id: all_teams.sample.id, event_id: event.id)
+  i = 0
+  while i < 4
+    join = Enrollment.new(team_id: all_teams.sample.id, event_id: event.id)
+    unless event.teams.include?(Team.find(join.team_id))
+      join.save
+      i += 1
+    end
   end
 end
 

@@ -1,0 +1,22 @@
+<section id="submission_form">
+  <header>
+    <h1>You are submitting a photo for the objective:<h1>
+    <h2><%= @objective.clue %></h2>
+  </header>
+
+  <section class="photo_form">
+    <h3>Where is your photo located?</h3>
+    <ul>
+      <li><a href="/oauth/connect">My submission is on <span class="bold">Instagram</span></a></li>
+      <li><a href="#">My submission is on <span class="bold">Facebook</span></a></li>
+      <li><a href="#">My submission is on <span class="bold">Flickr</span></a></li>
+      <li><a href="#">I want to upload a <span class="bold">new photo</span></a></li>
+    </ul>
+  </section>
+
+  <section class="photo_form">
+    <% if @html %>
+      <%= erb :'events/_photos' %>
+    <% end %>
+  </section>
+</section>

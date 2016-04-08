@@ -1,0 +1,27 @@
+<section class="form-display">
+  <h1>Register as a new Photographic Contender</h1>
+
+<section class="form">
+  <form action="/users" method="post">
+    <label for="username">Desired Username:</label>
+    <input type="text" name="username" placeholder="Any name you want, really">
+    <label for="email">Your Email Address:</label>
+    <input type="email" name="email" placeholder="ilovecameras@example.com">
+    <label for="password">Desired Password:</label>
+    <input type="password" name="password" placeholder="A secret dear to your heart">
+    <input type="submit" value="Sign me up!">
+  </form>
+</section>
+
+<section class="errors">
+  <% if @errors %>
+    <% @errors.each do |error| %>
+    <p><%= error %></p>
+    <% end %>
+  <% end %>
+</section>
+
+<p>
+<a href='/'>Actually I don't think this kind of thing is my jam, sorry</a>
+</p>
+</section>

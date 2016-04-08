@@ -1,0 +1,14 @@
+<section id="event">
+  <header>
+    <h1><%= @event.name %></h1>
+    <h2>This is a <%= @event.event_type %> event</h2>
+    <h3>Rally Start: <%= @event.event_start %>
+    <h3>Rally End: <%= @event.event_end %>
+  </header>
+
+  <section class="list">
+    <h2><%= @event.list.title %></h2>
+    <%= erb :'/events/_objectives' %>
+  </section>
+
+</section>
