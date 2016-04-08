@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- 
+  <!--
     normalize.css removes cross-browser differences in defaults, e.g.,
     differences in how form elements appear between Firefox and IE
     See: http://necolas.github.com/normalize.css/
@@ -15,9 +15,35 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <title></title>
+  <title>Photo Rally</title>
 </head>
 <body>
-  <%= yield %>
+  <div class="wrapper">
+    <header>
+      <a href="/">
+      <h1>Photo Rally!</h1>
+      <h2>Photographic Scavenger Hunts</h2>
+      </a>
+    </header>
+    <nav>
+      <div id="links">
+      <% unless logged_in? %>
+        <a href="/session/new">Log In</a>
+        <a href="/users/new">Register</a>
+      <% else %>
+        <a href="/users/<%= current_user.id %>"><%= current_user.username %></a>
+        <a id="logout" href="/session/end">Log Out</a>
+      <% end %>
+      <a href="#">Active Rallies</a>
+      <a href="#">Leaderboards</a>
+      <a href="#">Photo Wall of Fame</a>
+      </div>
+    </nav>
+      <%= yield %>
+  </div>
+  <footer>
+    <p>&copy; Zach Barton 2016</p>
+    <p>A beautiful and meaningful website</p>
+  </footer>
 </body>
 </html>

@@ -1,0 +1,25 @@
+<section class="form-display">
+<h1>Enter The Photographic Arena</h1>
+
+<section class="form">
+  <form action="/session" method="post">
+    <label for="username">Your Username:</label>
+    <input type="text" name="username" placeholder="The Captain of Cameras">
+    <label for="password">Your Password:</label>
+    <input type="password" name="password" placeholder="it's a secret">
+    <input type="submit" value="My Body Is Ready">
+  </form>
+</section>
+
+<section class="errors">
+  <% if @errors %>
+    <% @errors.each do |error| %>
+    <h2><%= error %></h2>
+    <% end %>
+  <% end %>
+</section>
+
+<p>
+<a href='/'>No thank you, I do not wish to participate in this brave new world</a>
+</p>
+</section>

@@ -33,7 +33,7 @@ get "/photos" do
   user = client.user
   @html = "<h1>#{user.username}'s recent media</h1>"
   for media_item in client.user_recent_media
-    @html << "<div style='float:left;'><img src='#{media_item.images.thumbnail.url}'><br/> <a href='/media_like/#{media_item.id}'>Like</a>  <a href='/media_unlike/#{media_item.id}'>Un-Like</a>  <br/>LikesCount=#{media_item.likes[:count]}</div>"
+    @html << "<div><img src='#{media_item.images.thumbnail.url}'><br/></div>"
   end
   @html << "<a href='/nav'>Go back</a>"
   erb :pictures_show

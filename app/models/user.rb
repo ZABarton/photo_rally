@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
 has_many :memberships
 has_many :teams, through: :memberships
 has_many :leaderships, class_name: "Team", foreign_key: :leader_id
+has_many :enrollments, through: :teams
+has_many :events, through: :enrollments
 
 validate :password_validator
 

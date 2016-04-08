@@ -1,0 +1,5 @@
+<ul>
+<% @user.events.each do |event| %>
+  <li><a href="/events/<%= event.id %>"><span class="bold"><%=event.name %></span></a> - Participating with Team <%= @user.enrollments.find_by(event_id: event.id).team.name %></li>
+<% end %>
+</ul>
