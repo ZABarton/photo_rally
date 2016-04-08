@@ -78,6 +78,7 @@ footer {
   font-size: .75em;
   padding: 10px;
   height: 100px;
+  text-decoration: none;
 }
 
 
@@ -140,38 +141,62 @@ footer {
   height: 100%;
 }
 
-#current_rallies {
+#submission_form header {
+  width: 50%;
+  color: #FCFFF5;
+  height: 100%;
+  border: 5px double #91AA9D;
+  border-radius: 10px;
+  margin: 10px auto;
+}
+
+.list {
   margin: 0 auto;
   padding: 5px;
   border: 5px double #91AA9D;
-  border-radius: 5px;
+  border-radius: 10px;
   width: 75%;
   background-color: #D1DBBD;
   text-align: center;
 }
 
-#list {
-  margin: 0 auto;
+.photo_form {
+  margin: 10px auto;
   padding: 5px;
   border: 5px double #91AA9D;
-  border-radius: 5px;
-  width: 75%;
+  border-radius: 10px;
+  width: 50%;
   background-color: #D1DBBD;
   text-align: center;
 }
 
-#current_rallies li {
+.photo_form li {
+  list-style: none;
+  line-height: 2em;
+}
+
+.photo_form a {
+  text-decoration: none;
+  color: #3E606F;
+}
+
+.photo_form a:hover {
+  text-decoration: none;
+  color: #193441;
+}
+
+.list li {
   list-style: none;
   text-align: left;
   line-height: 1.5em;
 }
 
-#current_rallies a {
+.list a {
   text-decoration: none;
   color: #3E606F;
 }
 
-#current_rallies a:hover {
+.list a:hover {
   text-decoration: none;
   color: #193441;
 }

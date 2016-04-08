@@ -1,5 +1,5 @@
 <ul>
-<% @event.list.objectives do |objective| %>
-  <li><%= objective.clue %></li>
+<% @event.list.objectives.each do |objective| %>
+  <li><%= objective.clue %> - <a href="/submissions/<%= objective.id %>/new">Submit a Photo for this Objective</a></li>
 <% end %>
 </ul>

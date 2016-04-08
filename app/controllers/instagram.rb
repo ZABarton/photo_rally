@@ -25,18 +25,17 @@ end
 
 get "/nav" do
   @html = ""
-  erb :pictures_show
+  redirect '/photos'
 end
 
 get "/photos" do
   client = Instagram.client(:access_token => session[:access_token])
   user = client.user
-  @html = "<h1>#{user.username}'s recent media</h1>"
+  @html = "<h1 style='text-align: center'>Select a photo: </h1>"
   for media_item in client.user_recent_media
-    @html << "<div><img src='#{media_item.images.thumbnail.url}'><br/></div>"
+    @html << "<div style='float:left; margin: 10px;''><img src='#{media_item.images.thumbnail.url}'><br/></div>"
   end
-  @html << "<a href='/nav'>Go back</a>"
-  erb :pictures_show
+  erb :'/events/_photos'
 end
 
 get "/logout" do
